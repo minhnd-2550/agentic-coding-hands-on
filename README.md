@@ -129,28 +129,32 @@ Sử dụng Figma project để thực hành:
 
 #### Chuẩn bị context: Viết Screen Spec trên MoMorph Web
 
-Trước khi bắt đầu generate code, bạn cần chuẩn bị screen spec trên MoMorph Web thông qua MoMorph Figma Plugin (yêu cầu Figma Account - Full Seat). Từ MoMorph Figma Plugin, đánh số cho các frame Figma cần nhập specs, submit các items này lên MoMorph Web và bắt đầu viết screen spec mô tả chi tiết chức năng, behavior, business logic của màn hình đó thủ công hoặc sử dụng tính năng sinh specs tự động của MoMorph. Screen spec trên server chính là nguồn thông tin gốc (source of truth) cho toàn bộ quy trình generate code phía sau.
+Thông thường, trước khi bắt đầu generate code, ta cần chuẩn bị đầy đủ *Screen Specifications* trên MoMorph. Nội dung Screen Specifications này có thể được viết manual, hoặc được generate ra bởi AI thông qua các chức năng trên MoMorph Web, MoMorph Figma Plugin (yêu cầu Figma Account - Full Seat), cũng như thông qua các hệ thống Agent (GitHub Copilot, Claude Code) khi kết nối với MoMorph MCP Server.
 
-> **Lưu ý cho bài thực hành này:** Screen spec của các màn hình đã được chuẩn bị sẵn trên MoMorph server rồi, nên các bạn **không cần viết spec** mà có thể **bắt tay vào quy trình generate code ngay từ bước `/momorph.constitution`**. Vui lòng tham khảo thêm tài liệu [MoMorph Figma Plugin](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F07S87PSVUN) nếu muốn tìm hiểu chi tiết hơn về khâu viết Screen Spec.
+Screen spec trên server chính là nguồn thông tin gốc (source of truth) cho toàn bộ quy trình generate code phía sau.
+
+> **Lưu ý cho bài thực hành này:** Screen spec của các màn hình đã được chuẩn bị sẵn trên MoMorph server rồi, nên các bạn **không cần tạo lại screen spec** nữa mà có thể **bắt tay vào quy trình generate code ngay từ bước `/momorph.constitution`**. Tuy nhiên các bạn vẫn được khuyến khích tự tìm hiểu sâu hơn về quy trình tạo Screen Spec với MoMorph.
+> - Vui lòng tham khảo thêm tài liệu [MoMorph Figma Plugin](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F07S87PSVUN) để tìm hiểu chi tiết hơn về khâu viết Screen Spec.
+> - Vui lòng tham khảo thêm tài liệu về [MoMorph CLI Commands](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F0A86NC88SK) sau đó trải nghiệm việc tạo screen specs cho một vài màn hình với command `momorph.specs`.
 
 #### Quy trình generate code với MoMorph
 
 Sau khi đã có screen spec trên MoMorph server, sử dụng các slash commands trong AI agent để generate code:
 
-1. **`/momorph.constitution`** — Khởi tạo coding standards và conventions cho project
-2. **`/momorph.specify`** — Kéo screen spec từ MoMorph server về local và sinh ra các file spec cục bộ (`spec.md`, `design-style.md`)
+1. **`/momorph.constitution`** — Khởi tạo coding standards và conventions cho project. Đây là command hầu như bạn chỉ cần dùng một lần ở đầu quy trình để thiết lập các quy tắc phát triển mà AI Agent cần tuân thủ xuyên suốt quá trình generate code sau này.
+2. **`/momorph.specify`** — Kéo screen spec và thông tin design Figma về local thông qua MoMorph MCP, tiến hành phân tích và sinh ra các file đặc tả chi tiết (`spec.md`, `design-style.md`). Với mỗi một chức năng/màn hình, chúng ta sẽ bắt đầu từ command này để tạo context ban đầu.
 3. **`/momorph.reviewspecify`** — Review và refine spec output (nên chạy 2–3 lần để kết quả tốt hơn)
 4. **`/momorph.plan`** — Tạo implementation plan chi tiết
 5. **`/momorph.reviewplan`** — Review và refine plan output (nên chạy 2–3 lần để kết quả tốt hơn)
 6. **`/momorph.tasks`** — Chia nhỏ plan thành danh sách task thực thi
-7. **`/momorph.implement`** — Thực thi tasks, sinh code theo design
+7. **`/momorph.implement`** — Thực thi tasks, sinh code cũng như test
 
 > **Tại sao đã có spec trên MoMorph rồi mà vẫn cần chạy `/momorph.specify`?**
 >
 > - **Screen spec trên MoMorph server** là bản mô tả chức năng, behavior, business logic do con người viết và lưu trên nền tảng MoMorph Web. Nó đóng vai trò nguồn thông tin gốc (source of truth).
-> - **`/momorph.specify`** sẽ đọc screen spec đó từ server, kết hợp với thông tin design từ Figma (layout, style, component structure...), rồi tổng hợp lại thành các file spec cục bộ (`spec.md`, `design-style.md`) ngay trong repo. Các file này chính là context trực tiếp mà AI agent sử dụng trong các bước tiếp theo (plan, tasks, implement).
+> - **`/momorph.specify`** sẽ đọc screen spec đó từ server, **kết hợp với thông tin design từ Figma (layout, style, component structure...)**, rồi tổng hợp lại thành các file spec chi tiết, lưu cục bộ ngay trong repo (`spec.md`, `design-style.md`). Các file này chính là context trực tiếp mà AI agent sử dụng trong các bước tiếp theo (plan, tasks, implement).
 >
-> Nói cách khác: screen spec trên server = **input do người dùng viết**, còn output của `/momorph.specify` = **context đã được xử lý và làm giàu** để AI agent có thể hiểu và sinh code chính xác.
+> Nói cách khác: spec trên MoMorph server là **screen spec** theo format của Sun\*, được viết ra để hướng đến con người đọc hiểu và review. Còn output của `/momorph.specify` là một bản **implementation spec** được tổng hợp từ nhiều nguồn, là **context đã được xử lý và làm giàu** để AI Agent có thể hiểu và sinh code chính xác.
 
 #### Ví dụ prompt cho từng command
 
