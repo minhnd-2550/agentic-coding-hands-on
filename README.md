@@ -149,7 +149,7 @@ Quy trình đầy đủ generate code với MoMorph (sử dụng slash commands 
 6. **`/momorph.tasks`** — Chia nhỏ plan thành danh sách task thực thi
 7. **`/momorph.implement`** — Thực thi tasks, sinh code theo design
 
-> **Lưu ý cho bài thực hành này:** Specs (bước 2, 3) của các màn hình trong Figma file đã được tạo sẵn trên MoMorph server. Vì vậy trong buổi thực hành, các bạn có thể **bắt đầu từ bước 1 (constitution) rồi nhảy thẳng sang bước 4 (plan)**. Bước specify và reviewspecify chỉ cần thực hiện khi bạn muốn tạo spec cho một màn hình mới chưa có sẵn.
+> **Lưu ý cho bài thực hành này:** Specs của các màn hình đã được chuẩn bị sẵn trên MoMorph server. Do vậy trong buổi thực hành, các bạn có thể **bắt đầu ngay vào quá trình gen code bắt đầu từ /momorph.constitution cho đến /momorph.implement**.
 
 #### Ví dụ prompt cho từng command
 
