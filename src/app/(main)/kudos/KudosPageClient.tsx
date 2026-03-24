@@ -26,6 +26,7 @@ const FAKE_RECEIVER = {
 };
 const FAKE_KUDOS: KudosWithUser[] = Array.from({ length: 5 }, (_, i) => ({
   id: `kudos-${i + 1}`, sender_id: FAKE_SENDER.id, receiver_id: FAKE_RECEIVER.id,
+  title: `Kudos #${i + 1}`, is_anonymous: false, anonymous_name: null,
   content: 'Cảm ơn người em bình thường nhưng phi thường :D\nCảm ơn sự chăm chỉ, cần mẫn của em đã tạo động lực rất nhiều cho team, để luôn nhắc mình luôn phải nỗ lực hơn nữa trong công việc. <3 và cuộc sống...',
   hashtags: ['Dedicated', 'Inspiring', 'Creative'], images: [], media_type: null,
   hearts_count: 1000 - i * 100, created_at: new Date(2025, 9, 30, 10 + i, 0).toISOString(),

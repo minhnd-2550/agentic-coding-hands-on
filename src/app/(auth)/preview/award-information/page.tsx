@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingActionButton } from "@/components/layout/FloatingActionButton";
+
 import { AwardHero } from "@/components/awards/AwardHero";
 import { AwardSection } from "@/components/awards/AwardSection";
 import { AwardKudosSection } from "@/components/awards/AwardKudosSection";
@@ -30,7 +30,6 @@ export default function PreviewAwardInformationPage() {
         </div>
       </main>
       <Footer variant="full" />
-      <FloatingActionButton />
     </>
   );
 }

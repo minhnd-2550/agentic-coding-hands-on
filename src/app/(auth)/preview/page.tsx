@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingActionButton } from "@/components/layout/FloatingActionButton";
+
 import { HeroSection } from "@/components/home/HeroSection";
 import { ContentSection } from "@/components/home/ContentSection";
 import { AwardsSectionHeader } from "@/components/home/AwardsSectionHeader";
@@ -44,7 +44,6 @@ export default function PreviewPage() {
         <KudosSection />
       </main>
       <Footer variant="full" />
-      <FloatingActionButton />
     </>
   );
 }

@@ -22,6 +22,7 @@ export function ReceiverSearch({ value, onChange }: ReceiverSearchProps) {
   const [isLoading, setIsLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasInteracted = useRef(false);
 
   // Fetch users (all or filtered by query)
   const fetchUsers = useCallback(async (q: string) => {
@@ -58,8 +59,18 @@ export function ReceiverSearch({ value, onChange }: ReceiverSearchProps) {
     return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
   }, [query, fetchUsers]);
 
-  // Show all users on focus
+  // Show all users on focus (only after user has interacted)
   const handleFocus = useCallback(() => {
+    if (!hasInteracted.current) return;
+    if (!value && results.length === 0) {
+      fetchUsers('');
+    } else if (results.length > 0) {
+      setIsOpen(true);
+    }
+  }, [value, results.length, fetchUsers]);
+
+  const handleClick = useCallback(() => {
+    hasInteracted.current = true;
     if (!value && results.length === 0) {
       fetchUsers('');
     } else if (results.length > 0) {
@@ -134,8 +145,9 @@ export function ReceiverSearch({ value, onChange }: ReceiverSearchProps) {
             <input
               type="text"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => { hasInteracted.current = true; setQuery(e.target.value); }}
               onFocus={handleFocus}
+              onClick={handleClick}
               placeholder={t("kudos.write.receiver_placeholder")}
               className="w-full h-14 border border-[#999] rounded-lg px-4 pr-10 font-[Montserrat] text-base text-[#2E3940] placeholder:text-[#999] transition-colors duration-150 focus:border-[#3B82F6] focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)] focus:outline-none"
               aria-required="true"
