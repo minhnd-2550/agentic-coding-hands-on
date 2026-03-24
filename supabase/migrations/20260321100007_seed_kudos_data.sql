@@ -136,7 +136,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000002',
    E'Cảm ơn người em bình thường nhưng phi thường :D\nCảm ơn sự chăm chỉ, cần mẫn của em đã tạo động lực rất nhiều cho team, để luôn nhắc mình luôn phải nỗ lực hơn nữa trong công việc. <3 và cuộc sống...',
    ARRAY['Dedicated', 'Inspiring', 'Creative'],
-   '{}', null, 1000,
+   '{}', null, 0,
    '2025-10-30T10:00:00Z'),
 
   ('10000000-0000-0000-0000-000000000002',
@@ -144,7 +144,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000001',
    E'Anh Nhật là một người leader tuyệt vời! Luôn sẵn sàng hỗ trợ và chia sẻ kinh nghiệm cho team.\nCảm ơn anh đã giúp em rất nhiều trong dự án vừa rồi.',
    ARRAY['Leadership', 'Mentoring', 'Dedicated'],
-   '{}', null, 850,
+   '{}', null, 0,
    '2025-10-30T09:30:00Z'),
 
   ('10000000-0000-0000-0000-000000000003',
@@ -152,7 +152,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000004',
    E'Quý là thành viên tích cực nhất team mình!\nLuôn hoàn thành task đúng deadline và chất lượng code rất tốt. Keep it up!',
    ARRAY['Dedicated', 'Innovation'],
-   '{}', null, 720,
+   '{}', null, 0,
    '2025-10-30T08:45:00Z'),
 
   ('10000000-0000-0000-0000-000000000004',
@@ -160,7 +160,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000003',
    E'Chị Linh đã giúp team product định hướng sản phẩm rất tốt.\nNhờ chị mà team dev hiểu rõ requirement và giảm thiểu bug rất nhiều. Cảm ơn chị!',
    ARRAY['Communication', 'Problem Solving'],
-   '{}', null, 650,
+   '{}', null, 0,
    '2025-10-29T16:00:00Z'),
 
   ('10000000-0000-0000-0000-000000000005',
@@ -168,7 +168,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000006',
    E'Đức là một backend developer xuất sắc. API của Đức luôn chạy mượt và performance rất tốt.\nTeam FE rất thích làm việc với API của Đức.',
    ARRAY['Innovation', 'Dedicated', 'Teamwork'],
-   '{}', null, 500,
+   '{}', null, 0,
    '2025-10-29T14:30:00Z'),
 
   ('10000000-0000-0000-0000-000000000006',
@@ -176,7 +176,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000007',
    E'Hồng là designer có mắt thẩm mỹ rất tốt. Mọi design đều rất đẹp và dễ hiểu.\nCảm ơn Hồng đã làm cho sản phẩm của team thêm đẹp hơn!',
    ARRAY['Creative', 'Inspiring'],
-   '{}', null, 430,
+   '{}', null, 0,
    '2025-10-29T11:00:00Z'),
 
   ('10000000-0000-0000-0000-000000000007',
@@ -184,7 +184,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000008',
    E'An đã làm rất tốt trong việc quảng bá sản phẩm ra thị trường.\nSố lượng user tăng 30% kể từ khi An tham gia team marketing.',
    ARRAY['Leadership', 'Communication'],
-   '{}', null, 380,
+   '{}', null, 0,
    '2025-10-28T15:00:00Z'),
 
   ('10000000-0000-0000-0000-000000000008',
@@ -192,7 +192,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000009',
    E'Hải luôn lo lắng cho sức khoẻ và tinh thần của cả team.\nNhờ Hải mà team luôn có những buổi team building vui vẻ. Cảm ơn Hải!',
    ARRAY['Teamwork', 'Resilience'],
-   '{}', null, 310,
+   '{}', null, 0,
    '2025-10-28T10:30:00Z'),
 
   ('10000000-0000-0000-0000-000000000009',
@@ -200,7 +200,7 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000010',
    E'Tuấn rất giỏi trong việc tối ưu hoá quy trình làm việc.\nNhờ Tuấn mà team tiết kiệm được rất nhiều thời gian và công sức.',
    ARRAY['Innovation', 'Problem Solving'],
-   '{}', null, 250,
+   '{}', null, 0,
    '2025-10-27T09:00:00Z'),
 
   ('10000000-0000-0000-0000-000000000010',
@@ -208,22 +208,64 @@ INSERT INTO public.kudos (id, sender_id, receiver_id, content, hashtags, images,
    '00000000-0000-0000-0000-000000000005',
    E'Hiệp là QA rất kĩ tính và chuyên nghiệp.\nMọi bug đều được report chi tiết, giúp dev fix nhanh chóng. Cảm ơn Hiệp!',
    ARRAY['Dedicated', 'Communication', 'Resilience'],
-   '{}', null, 180,
+   '{}', null, 0,
    '2025-10-26T13:00:00Z')
 ON CONFLICT (id) DO NOTHING;
 
--- 4. Seed hearts (some users hearted some kudos)
+-- 4. Seed hearts (each user hearts several kudos for realistic data)
 INSERT INTO public.hearts (user_id, kudos_id) VALUES
+  -- Kudos #1: 7 hearts (users 2-8, excluding sender user 1)
   ('00000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000001'),
   ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000001'),
   ('00000000-0000-0000-0000-000000000004', '10000000-0000-0000-0000-000000000001'),
+  ('00000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000001'),
+  ('00000000-0000-0000-0000-000000000006', '10000000-0000-0000-0000-000000000001'),
+  ('00000000-0000-0000-0000-000000000007', '10000000-0000-0000-0000-000000000001'),
+  ('00000000-0000-0000-0000-000000000008', '10000000-0000-0000-0000-000000000001'),
+  -- Kudos #2: 6 hearts
   ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000002'),
+  ('00000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000002'),
   ('00000000-0000-0000-0000-000000000004', '10000000-0000-0000-0000-000000000002'),
+  ('00000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000002'),
+  ('00000000-0000-0000-0000-000000000007', '10000000-0000-0000-0000-000000000002'),
+  ('00000000-0000-0000-0000-000000000009', '10000000-0000-0000-0000-000000000002'),
+  -- Kudos #3: 5 hearts
   ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000003'),
-  ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000004'),
+  ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000003'),
+  ('00000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000003'),
+  ('00000000-0000-0000-0000-000000000006', '10000000-0000-0000-0000-000000000003'),
+  ('00000000-0000-0000-0000-000000000010', '10000000-0000-0000-0000-000000000003'),
+  -- Kudos #4: 4 hearts
+  ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000004'),
+  ('00000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000004'),
+  ('00000000-0000-0000-0000-000000000006', '10000000-0000-0000-0000-000000000004'),
+  ('00000000-0000-0000-0000-000000000009', '10000000-0000-0000-0000-000000000004'),
+  -- Kudos #5: 4 hearts
+  ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000005'),
+  ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000005'),
   ('00000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000005'),
-  ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000006')
+  ('00000000-0000-0000-0000-000000000008', '10000000-0000-0000-0000-000000000005'),
+  -- Kudos #6: 3 hearts
+  ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000006'),
+  ('00000000-0000-0000-0000-000000000004', '10000000-0000-0000-0000-000000000006'),
+  ('00000000-0000-0000-0000-000000000010', '10000000-0000-0000-0000-000000000006'),
+  -- Kudos #7: 3 hearts
+  ('00000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000007'),
+  ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000007'),
+  ('00000000-0000-0000-0000-000000000009', '10000000-0000-0000-0000-000000000007'),
+  -- Kudos #8: 2 hearts
+  ('00000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000008'),
+  ('00000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000008'),
+  -- Kudos #9: 2 hearts
+  ('00000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000009'),
+  ('00000000-0000-0000-0000-000000000007', '10000000-0000-0000-0000-000000000009'),
+  -- Kudos #10: 1 heart
+  ('00000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000010')
 ON CONFLICT (user_id, kudos_id) DO NOTHING;
+
+-- 4b. Sync hearts_count with actual hearts records
+UPDATE public.kudos k
+SET hearts_count = (SELECT count(*) FROM public.hearts h WHERE h.kudos_id = k.id);
 
 -- 5. Seed secret boxes
 INSERT INTO public.secret_boxes (user_id, is_opened, gift_description, opened_at) VALUES
