@@ -1,0 +1,111 @@
+No,itemId,itemName,nameJP,nameTrans,itemType,itemSubtype,buttonType,dataType,required,format,minLength,maxLength,defaultValue,validationNote,description,userAction,transitionNote,databaseTable,databaseColumn,databaseNote,qa
+"A","662:14391","Header","ヘッダー","Header","others","navigation","","","false","","","","","","Thanh đầu trang chứa logo và bộ chọn ngôn ngữ.
+
+Display Elements:
+  - Logo (A.1): Biểu tượng Sun Annual Awards 2025 ở góc trái
+  - Language selector (A.2): Nút chọn ngôn ngữ (VN; EN; JP) ở góc phải
+
+Function & Logic:
+  - Logo: Không tương tác trên trang login (trên các trang khác sau login; click dẫn về Homepage SAA)
+  - Language selector: Click mở dropdown chọn ngôn ngữ (VN; EN; JP)
+  - Responsive: Trên mobile; header co giãn full-width; logo thu nhỏ; language selector giữ nguyên góc phải","","","","","",""
+"A.1","I662:14391;186:2166","Logo","ロゴ","Logo Sun Annual Awards 2025","others","logo","","","false","","","","","","Logo 'Sun Annual Awards 2025' ở góc trên trái của header.
+
+Display Elements:
+  - Icon: Biểu tượng SAA 2025
+
+Function & Logic:
+  - Trang login: Không tương tác (đây là trang đầu tiên)
+  - Các trang khác (sau login): Click dẫn về Homepage SAA","","","","","",""
+"A.2","I662:14391;186:1601","Language","言語切り替え","Language Selector","button","","toggle","","false","","","","VN","","Nút chọn ngôn ngữ hiển thị ngôn ngữ hiện tại và mở menu lựa chọn.
+
+Display Elements:
+  - Cờ: Icon cờ quốc gia tương ứng bên trái
+  - Text: Mã ngôn ngữ hiện tại ('VN' / 'EN' / 'JP')
+  - Chevron: Mũi tên xuống nhỏ bên phải
+
+Function & Logic:
+  - Click: Mở dropdown để chọn ngôn ngữ (VN; EN; JP) (linked frame: 721:4942 - Dropdown-ngôn ngữ)
+  - Hover: Hiệu ứng highlight và đổi cursor thành pointer
+  - Khi chọn ngôn ngữ mới: Toàn bộ giao diện được dịch lại (full i18n; không reload trang)
+  - Lưu trữ: Language preference lưu trong localStorage
+  - Khi tải trang: Đọc localStorage để hiển thị ngôn ngữ đã chọn; mặc định VN","on_click","Mở dropdown hiển thị danh sách ngôn ngữ: VN; EN; JP (linked frame: 721:4942 - Dropdown-ngôn ngữ)","","","",""
+"B","662:14393","Bìa","カバー","Hero Cover / Login Screen","others","hero","","","false","","","","","","Hero bìa giới thiệu SAA 2025 với nút đăng nhập bằng Google.
+
+Display Elements:
+  - Hình nền (B.1): Artwork trang trí toàn khung với tiêu đề 'ROOT FURTHER'
+  - Nội dung (B.2): Mô tả 'Bắt đầu hành trình của bạn cùng SAA 2025.' và 'Đăng nhập để khám phá!'
+  - Nút (B.3): 'LOGIN With Google' có Google icon
+
+Function & Logic:
+  - Container chứa key visual; nội dung giới thiệu và nút đăng nhập
+  - Không có tương tác riêng ở cấp container
+  - Responsive: Trên mobile; layout dọc full-width; nội dung và nút căn giữa","","","","","",""
+"B.1","662:14395","Key Visual","キービジュアル","Key Visual","others","hero_banner","","","false","","","","","","Hình ảnh chủ đạo (Key Visual) bên trong khu vực hero. Là phần con của Bìa (B).
+
+Display Elements:
+  - Background: Họa tiết nghệ thuật sóng nhiều màu sắc
+  - Title: 'ROOT FURTHER'
+
+Function & Logic:
+  - Hiển thị: Chỉ hiển thị; không tương tác
+  - Responsive: Hình nền cover toàn bộ vùng hero; text 'ROOT FURTHER' co giãn responsive
+
+Lưu ý: Item C (Keyvisual) là container nền toàn trang. Item B.1 là key visual bên trong hero.","","","","","",""
+"B.2","662:14753","content","紹介コンテンツ","Introduction Content","others","info_block","","","false","","","","","","Mô tả ngắn trong khu vực hero kêu gọi người dùng đăng nhập để khám phá SAA 2025.
+
+Display Elements:
+  - Dòng 1: Label - 'Bắt đầu hành trình của bạn cùng SAA 2025.'
+  - Dòng 2: Label - 'Đăng nhập để khám phá!'
+
+Function & Logic:
+  - Hiển thị: Truyền thông điệp và hướng người dùng tới nút 'LOGIN With Google'
+  - Responsive: Text wrap tự nhiên trên mobile; không bị cắt
+  - i18n: Nội dung text được dịch theo ngôn ngữ đã chọn","","","","","",""
+"B.3","662:14425","Login","Googleログインボタン","Login with Google Button","button","","icon_text","","false","","","","","- Condition: Email không thuộc domain @sun-asterisk.com
+  Error: Toast ""Chỉ tài khoản @sun-asterisk.com được phép đăng nhập.""
+- Condition: Người dùng hủy luồng xác thực Google
+  Error: Toast ""Đăng nhập đã bị hủy. Vui lòng thử lại.""
+- Condition: Lỗi mạng hoặc lỗi server
+  Error: Toast ""Đã có lỗi xảy ra. Vui lòng thử lại sau.""
+- Condition: Vượt quá 5 lần đăng nhập thất bại
+  Error: Toast ""Tài khoản tạm thời bị khóa. Vui lòng thử lại sau.""","Nút dùng để đăng nhập bằng tài khoản Google qua Supabase Auth. Chỉ chấp nhận @sun-asterisk.com.
+
+Display Elements:
+  - Text: 'LOGIN With Google'
+  - Icon: Google logo bên phải text
+
+Function & Logic:
+  - Click: Mở luồng xác thực Google OAuth qua Supabase Auth
+  - Domain restriction: Chỉ chấp nhận tài khoản Google với domain @sun-asterisk.com
+  - Success: Redirect đến Homepage SAA
+  - Error: Hiển thị toast notification với thông báo lỗi tương ứng (tự ẩn sau 5 giây)
+  - State: Khi đang xử lý; nút disabled và hiển thị biểu tượng loading
+  - State: Nút luôn enabled vì không có input cần validate trước khi click
+  - Chống double-click: Disable nút ngay khi click lần đầu cho đến khi xử lý xong
+  - Error recovery: Khi OAuth thất bại; hiển thị toast lỗi và re-enable nút
+  - Rate limiting: Sau 5 lần đăng nhập thất bại; tạm khóa và hiển thị toast cảnh báo
+  - Security: Xác thực qua Supabase Auth (Google provider); session cookie qua @supabase/ssr
+  - Navigation action: submit_form
+  - Responsive: Trên mobile nút full-width; trên desktop giữ kích thước cố định
+  - i18n: Text nút và toast messages được dịch theo ngôn ngữ đã chọn","on_click","Mở luồng xác thực Google OAuth qua Supabase Auth; sau khi thành công redirect đến Homepage SAA","","","",""
+"C","662:14388","Keyvisual","キービジュアル背景","Key Visual Background (Full Page)","others","hero_banner","","","false","","","","","","Container hình nền trang trí bao phủ toàn bộ trang đăng nhập (bao gồm cả khu vực header và footer).
+
+Display Elements:
+  - Background: Artwork nghệ thuật sóng nhiều màu bao phủ toàn trang
+
+Function & Logic:
+  - Hiển thị: Chỉ hiển thị; không tương tác
+  - Responsive: Background sử dụng object-fit cover; đảm bảo không có khoảng trắng trên mọi kích thước màn hình
+
+Lưu ý: Đây là container nền toàn trang; khác với B.1 (Key Visual bên trong hero).","","","","","",""
+"D","662:14447","Footer","フッター","Footer","label","","","","false","","","","","","Hiển thị thông tin bản quyền ở chân trang.
+
+Display Elements:
+  - Text: 'Bản quyền thuộc về Sun* © 2025'
+
+Function & Logic:
+  - Hiển thị: Luôn cố định ở cuối trang (sticky bottom)
+  - Tương tác: Không tương tác
+  - Responsive: Text căn giữa trên mọi kích thước màn hình
+  - i18n: Text bản quyền được dịch theo ngôn ngữ đã chọn","","","","","",""

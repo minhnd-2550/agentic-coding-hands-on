@@ -1,0 +1,19 @@
+{
+  "login": {
+    "logo": {
+      "alt": "Sun Annual Awards 2025"
+    },
+    "heroImage": {
+      "alt": "ROOT FURTHER"
+    },
+    "loginButton": {
+      "label": "Login with Google"
+    },
+    "languageSelector": {
+      "loc": "button[aria-haspopup='listbox']"
+    },
+    "copyright": {
+      "text": "Bản quyền thuộc về Sun* © 2025"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "loginButton": "LOGIN With Google",
+  "copyright": "著作権はSun*に帰属します © 2025",
+  "heroText": "SAA 2025と一緒に旅を始めましょう。",
+  "errors": {
+    "domainRestricted": "@sun-asterisk.comアカウントのみログイン可能です。",
+    "authCancelled": "ログインがキャンセルされました。もう一度お試しください。",
+    "authFailed": "エラーが発生しました。後でもう一度お試しください。",
+    "rateLimited": "アカウントが一時的にロックされています。後でもう一度お試しください。"
+  }
+}

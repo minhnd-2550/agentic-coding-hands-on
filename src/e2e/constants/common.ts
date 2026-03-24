@@ -1,0 +1,3 @@
+export const JSON_INDENTATION = 2;
+export const DEFAULT_TIMEOUT = 30_000;
+export const DEFAULT_NAVIGATION_TIMEOUT = 15_000;

@@ -1,5 +1,23 @@
 {
 	"files.associations": {
 		"wrangler.json": "jsonc"
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "explicit"
+	},
+	"typescript.preferences.includePackageJsonAutoImports": "auto",
+	"typescript.suggest.autoImports": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/playwright-report": true,
+		"**/test-results": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/playwright-report": true,
+		"**/test-results": true
 	}
 }

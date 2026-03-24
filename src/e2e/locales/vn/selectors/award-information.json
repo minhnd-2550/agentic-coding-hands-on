@@ -1,0 +1,30 @@
+{
+  "awardInformation": {
+    "pageTitle": {
+      "text": "Hệ thống giải thưởng SAA 2025"
+    },
+    "navigation": {
+      "label": "Danh mục giải thưởng"
+    },
+    "categories": {
+      "topTalent": { "text": "Top Talent" },
+      "topProjectLeader": { "text": "Top Project Leader" },
+      "bestManager": { "text": "Best Manager" },
+      "signature2025": { "text": "Signature 2025 - Creator" },
+      "mvp": { "text": "MVP (Most Valuable Person)" }
+    },
+    "heroImage": {
+      "alt": "ROOT FURTHER"
+    },
+    "kudosSection": {
+      "title": { "text": "Sun* Kudos" },
+      "description": { "text": "Phong trào ghi nhận" },
+      "ctaLink": { "name": "Chi tiết", "href": "/kudos" }
+    },
+    "sections": {
+      "mvp": { "loc": "#mvp" },
+      "bestManager": { "loc": "#best-manager" },
+      "topProject": { "loc": "#top-project" }
+    }
+  }
+}

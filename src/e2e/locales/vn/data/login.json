@@ -1,0 +1,11 @@
+{
+  "loginButton": "LOGIN With Google",
+  "copyright": "Bản quyền thuộc về Sun* © 2025",
+  "heroText": "Bắt đầu hành trình của bạn cùng SAA 2025.",
+  "errors": {
+    "domainRestricted": "Chỉ tài khoản @sun-asterisk.com được phép đăng nhập.",
+    "authCancelled": "Đăng nhập đã bị hủy. Vui lòng thử lại.",
+    "authFailed": "Đã có lỗi xảy ra. Vui lòng thử lại sau.",
+    "rateLimited": "Tài khoản tạm thời bị khóa. Vui lòng thử lại sau."
+  }
+}
