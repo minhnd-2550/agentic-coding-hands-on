@@ -22,11 +22,11 @@ export function HighlightKudos({
   departments = [],
 }: HighlightKudosProps) {
   const { t } = useI18n();
-  const [highlights] = useState<KudosWithUser[]>(initialHighlights);
+  const highlights = initialHighlights;
   const [hashtagFilter, setHashtagFilter] = useState<string | null>(null);
   const [departmentFilter, setDepartmentFilter] = useState<string | null>(null);
-  const [isLoading] = useState(false);
-  const [error] = useState<string | null>(null);
+  const isLoading = false;
+  const error: string | null = null;
 
   const filteredHighlights = highlights.filter((k) => {
     if (hashtagFilter && !k.hashtags.includes(hashtagFilter)) return false;

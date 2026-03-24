@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useI18n } from '@/libs/i18n/context';
 import { SectionHeader } from './SectionHeader';
 import { SpotlightWordCloud } from './SpotlightWordCloud';
@@ -14,9 +14,9 @@ interface SpotlightBoardProps {
 
 export function SpotlightBoard({ initialData = [] }: SpotlightBoardProps) {
   const { t } = useI18n();
-  const [data] = useState<SpotlightEntry[]>(initialData);
-  const [isLoading] = useState(false);
-  const [error] = useState<string | null>(null);
+  const data = initialData;
+  const isLoading = false;
+  const error: string | null = null;
   const [dimensions, setDimensions] = useState({ width: 1157, height: 548 });
   const containerRef = useRef<HTMLDivElement>(null);
 
